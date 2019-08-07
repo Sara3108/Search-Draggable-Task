@@ -1,0 +1,30 @@
+.container{
+    width: 80%;
+    margin: auto
+}
+
+mat-card{
+    margin: 5px;
+    font-size: 18px;
+}
+
+.search{
+    width: 96%;
+    margin: 2px auto;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid lightgray;
+    position: relative;
+}
+mat-spinner{
+    margin:25% auto;
+    
+}
+
+/* .search:focus{
+    -moz-box-shadow: 0 0 3px #ccc;
+-webkit-box-shadow: 0 0 3px #ccc;
+box-shadow: 0 0 3px #ccc;
+    
+
+} */

@@ -1,0 +1,23 @@
+
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<!-- <input #myInput placeholder="Search" [(ngModel)]="name" (input)="filterItem(myInput.value)"/> -->
+
+<!-- <div *ngFor="let item of filteredItems">{{item.name}}</div> -->
+
+<div class="container" *ngIf="isLoading==false">
+    <br>
+    <!-- <mat-form-field class="example-full-width">
+        <input style="widows: 100%" #myInput matInput placeholder="search" [(ngModel)]="name"
+            (input)="filterItem(myInput.value)">
+    </mat-form-field> -->
+    <input class="search" style="widows: 100%" #myInput matInput placeholder="search" [(ngModel)]="name"
+        (input)="filterItem(myInput.value)">
+    <mat-card draggable droppable *ngFor="let item of filteredItems">
+        Name: {{item.name}} <br>
+        URL: {{item.url}}<br>
+        Height: {{item.height}}<br>
+        Homeworld: {{item.homeworld}}
+    </mat-card>
+
+
+</div>
