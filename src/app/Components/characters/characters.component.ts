@@ -8,12 +8,12 @@ import { DataService } from 'src/app/Services/data.service';
 })
 export class CharactersComponent implements OnInit {
 
-  res;  //api response
-  items: any[]  // results of response
-  filteredItems: any[];  // filtered array which will display when typing in textbox
-  isLoading:boolean= false;
-
   constructor(private service: DataService) { }
+
+  res;  //api response
+  results: any[]  // results of response
+  items: any[];  // filtered array which will display when typing in textbox
+  isLoading: boolean = false;  //for spinner
 
   ngOnInit() {
     this.getItems();
@@ -21,19 +21,19 @@ export class CharactersComponent implements OnInit {
 
   // get items from server
   getItems() {
-    this.isLoading=true;
+    this.isLoading = true;
     this.service.getAllItems().subscribe(response => {
       this.res = response;
-      this.items = this.res.results;
+      this.results = this.res.results;
       this.assignCopy();
-      console.log(this.items);
-      this.isLoading=false;
+      console.log(this.results);
+      this.isLoading = false;
     })
   }
 
   // when nothing has typed
   assignCopy() {
-    this.filteredItems = Object.assign([], this.items);
+    this.items = Object.assign([], this.results);
   }
 
   //when typing in textbox
@@ -41,10 +41,16 @@ export class CharactersComponent implements OnInit {
     if (!value) {
       this.assignCopy();
     }
-    this.filteredItems = Object.assign([], this.items).filter(
+    this.items = Object.assign([], this.results).filter(
       item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1
     )
   }
 
-  
+  //Sortable list style
+  listStyle = {
+    width: '100%',
+    height: '100%',
+  }
+
+
 }
