@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/Services/data.service';
+import { NgxSortableComponent } from 'ngx-sortable';
 
 @Component({
   selector: 'app-characters',
@@ -14,6 +15,9 @@ export class CharactersComponent implements OnInit {
   results: any[]  // results of response
   items: any[];  // filtered array which will display when typing in textbox
   isLoading: boolean = false;  //for spinner
+
+
+  
 
   ngOnInit() {
     this.getItems();
@@ -50,7 +54,9 @@ export class CharactersComponent implements OnInit {
   listStyle = {
     width: '100%',
     height: '100%',
+    dropZoneHeight:'100px',
   }
 
+  
 
 }

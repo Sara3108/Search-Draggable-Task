@@ -27,13 +27,13 @@ describe('CharactersComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set list of items which returned from server',()=>{
-    spyOn(service,'getAllItems').and.callFake(()=>{
-      return observable
-    });
-    component.getItems();
-    expect(component.items.length).toBeGreaterThan(0);
-  })
+  // it('should set list of items which returned from server',()=>{
+  //   spyOn(service,'getAllItems').and.callFake(()=>{
+  //     return observable
+  //   });
+  //   component.getItems();
+  //   expect(component.items.length).toBeGreaterThan(0);
+  // })
 
   it('should filter typed string',()=>{
     

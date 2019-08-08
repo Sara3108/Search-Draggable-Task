@@ -13,10 +13,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { NgxSortableModule } from 'ngx-sortable'
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     AppComponent,
     CharactersComponent
