@@ -6,25 +6,17 @@
     <input class="search" style="widows: 100%" #myInput matInput placeholder="Search" [(ngModel)]="name"
         (input)="filterItem(myInput.value)">
 
-    <ngx-sortable [items]="items" [listStyle]="listStyle">
+    <ngx-sortable [items]="items" [name]="'Characters'" [listStyle]="listStyle">
         <ng-template let-item>
             <mat-card>
-                <div class="card-header">{{item.name}} <span class="right-pos">Height: {{item.height}}</span> </div>
+                <div class="card-header">
+                    {{item.name}} <span class="right-pos">Height : {{item.height}}</span>
+                </div>
                 <div class="card-body">
-                        <!-- <div class="details">Height: {{item.height}}</div> -->
-                        <div class="details">URL: <span class="url">{{item.url}}</span></div>
-                        <div class="details">Homeworld: <span class="url">{{item.homeworld}}</span></div>
+                    <div class="details">URL : <span class="url">{{item.url}}</span></div>
+                    <div class="details">Homeworld : <span class="url">{{item.homeworld}}</span></div>
                 </div>
             </mat-card>
-<!-- 
-            <div class="card">
-                <div class="card-header">{{item.name}}</div>
-                <div class="card-body">
-                        Height: {{item.height}}
-                        URL: {{item.url}}
-                        Homeworld: {{item.homeworld}}
-                </div>
-            </div> -->
         </ng-template>
     </ngx-sortable>
 </div>
