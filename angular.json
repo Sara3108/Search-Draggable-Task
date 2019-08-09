@@ -118,5 +118,10 @@
       }
     }
   },
-  "defaultProject": "task"
+  "defaultProject": "task",
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false
+    }
+  }
 }
